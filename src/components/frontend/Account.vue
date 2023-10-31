@@ -56,7 +56,7 @@ import { authStore } from "../../stores/authStore";
                 <span class="absolute -left-8 top-0 text-base">
                     <i class="fa-regular fa-arrow-right-from-bracket"></i>
                 </span>
-                <button v-if="authStore.isAuthenticated" @click="authStore.logout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-pink-500 hover:bg-white mt-4 lg:mt-0">
+                <button type="button" v-if="authStore.isAuthenticated" @click="authStore.logout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-pink-500 hover:bg-white mt-4 lg:mt-0">
         Logout
       </button>
             </a>

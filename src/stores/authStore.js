@@ -51,9 +51,9 @@ const authStore = reactive({
       localStorage.removeItem("auth", 0);
       localStorage.removeItem("user", "{}");
       cart.items = {};
-      cart.totalPrice = 0;
+      //cart.totalPrice = 0;
       cart.saveCartInLocalStorage();
-      router.push("/login");
+      router.push("/");
     },
     getUserToken() {
       return authStore.user.token;
