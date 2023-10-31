@@ -24,7 +24,9 @@ import { cart } from '../../stores/cart'
                         <input type="number" v-model="item.quantity">
                     </p>
                     <p>
-                        <i class="fas fa-trash"></i>
+                        <button @click="cart.removeFromCart(item.product)" class="ml-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                   -
+                </button>
 
                     </p>
 
@@ -44,17 +46,8 @@ import { cart } from '../../stores/cart'
                         <span v-if="cart.discountApplied"> ( {{ cart.discountInPercentage }}%)</span>
                     </p>
                 </div>
-                <div class="my-5" v-if="!cart.discountApplied">
-                    <input v-model="cart.couponCode" type="text" placeholder="Apply Coupon Code">
-                    <button @click="cart.applyCoupon()" class="ml-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                      Apply Coupon
-                    </button>
-                </div>
-                <div class="my-5" v-else>
-                    <button @click="cart.removeCoupon()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                      Remove Coupon
-                    </button>
-                </div>
+               
+               
                 <button @click="cart.saveCartInLocalStorage()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Update Cart
                 </button>

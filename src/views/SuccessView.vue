@@ -1,14 +1,15 @@
 <script setup>
 import Header from '../components/frontend/Header.vue';
 import Footer from '../components/frontend/Footer.vue';
-
-import Order from '../components/frontend/Orders.vue';
+import Category from '../components/frontend/Category.vue';
+import OrderSuccess from '../components/frontend/OrderSuccess.vue';
 </script>
 
 <template>
   <main>
     <Header></Header>
-    <Order></Order>
+    <OrderSuccess></OrderSuccess>
+    
     <Footer></Footer>
   </main>
 </template>

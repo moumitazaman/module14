@@ -4,7 +4,7 @@
     <footer class="bg-white pt-16 pb-12 border-t border-gray-100">
         <div class="container grid grid-cols-1 ">
             <div class="col-span-1 space-y-4">
-                <img src="assets/images/logo.svg" alt="logo" class="w-30">
+                <img src="/src/assets/images/logo.svg" alt="logo" class="w-30">
                 <div class="mr-2">
                     <p class="text-gray-500">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, hic?
@@ -76,7 +76,7 @@
         <div class="container flex items-center justify-between">
             <p class="text-white">&copy; TailCommerce - All Right Reserved</p>
             <div>
-                <img src="assets/images/methods.png" alt="methods" class="h-5">
+                <img src="/src/assets/images/methods.png" alt="methods" class="h-5">
             </div>
         </div>
     </div>

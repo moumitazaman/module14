@@ -61,6 +61,7 @@
 
                 </div>
                     <RouterLink v-if="!authStore.isAuthenticated" to="/login" class="text-gray-200 hover:text-white transition">Login/Register</RouterLink>
+                    <RouterLink v-if="authStore.isAuthenticated" to="/dashboard" class="text-gray-200 hover:text-white transition">Dashboard</RouterLink>
 
             </div>
         </div>

@@ -1,16 +1,16 @@
 <script setup>
 import { onBeforeMount } from "vue";
-import { authStore } from "../../stores/authStore";
-import { order } from "../../stores/order";
-import router from '../../router/index';
+import { authStore } from "../store/authStore";
+import { orderS } from "../store/orderStore";
+import router from "../router";
 if (!authStore.isAuthenticated) {
   router.push({ name: "login" });
 }
 onBeforeMount(() => {
-  order.fetchOrders();
+  orderStore.fetchOrders();
 });
 function toggleProduct(orderId) {
-  const orderItem = order.orders.find((order) => order.id === orderId);
+  const orderItem = orderStore.orders.find((order) => order.id === orderId);
   if (orderItem) {
     orderItem.showProducts = !orderItem.showProducts;
   }
@@ -23,7 +23,7 @@ function toggleProduct(orderId) {
     <div class="container">
       <h1 class="text-3xl font-[700] font-mon text-center pt-8">Your orders</h1>
       <div class="bg-white p-8 rounded mt-8">
-        <div v-for="order in order.orders" :key="order.id">
+        <div v-for="order in orderStore.orders" :key="order.id">
           <div class="flex justify-between w-full space-y-2">
             <p class="w-1/3"><strong>Order ID:</strong> {{ order.id }}</p>
             <p class="w-1/3">

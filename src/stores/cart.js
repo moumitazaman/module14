@@ -1,5 +1,7 @@
 import {reactive, computed} from 'vue'
 import {order} from './order'
+import router from '../router/index';
+
 import {authStore} from './authStore'
 const cart = reactive({
     items:{},
@@ -79,7 +81,10 @@ const cart = reactive({
         }
         this.saveCartInLocalStorage()
     },
-    removeItem(product){},
+    removeFromCart(product) {
+        delete this.items[product.id];
+        this.saveCartInLocalStorage();
+      },
     emptyCart(){
         this.items = {}
         this.saveCartInLocalStorage()
@@ -92,7 +97,10 @@ const cart = reactive({
     },
     checkout(){
         order.placeOrder(this.totalPrice, this.items)
+        router.push("/order-success");
+        this.emptyCart();
     }
+   
 })
 cart.getCartFromLocalStorage()
 export {cart}

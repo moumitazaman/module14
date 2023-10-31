@@ -10,7 +10,8 @@ import ProductListView from '../views/ProductListView.vue'
 import Product from '../views/ProductView.vue'
 
 import Cart from '../views/CartView.vue'
-import Orders from '../components/frontend/Orders.vue'
+import Orders from '../views/OrderView.vue'
+import Success from '../views/SuccessView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,7 +55,15 @@ const router = createRouter({
   path: '/orders', components: {
       default: Orders,
       LeftSideBar: Sidebar
-  }
+  }, meta : {
+    isAuthenticated : true
+}
+},{
+  path: '/order-success', components: {
+      default: Success,
+  }, meta : {
+    isAuthenticated : true
+}
 },
   {
     path : '/dashboard',
